@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticiero 6.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sociales.css">
+    <script src="https://kit.fontawesome.com/2193d055c9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <div class="encabezado">
+        <img src="imagenes/logo.jpeg" alt="Logo" class="logo">
+        <h1>Noticiero 6.0</h1>
+
+        <div class="boton">
+            <a href="Help.html" class="ayuda">AYUDA</a>
+        </div>
+    </div>
+<div class="search-container">
+      <input type="text" id="searchInput" placeholder="buscar tema" />
+      <ul id="resultsList" class="results-list"></ul>
+      <p id="noResults" class="no-results">No se encontraron resultados.</p>
+    </div>
+
+<script src="app.js"></script>
+<script>
+    const countries = [
+  {
+    title: "¡CAMPEONES NACIONALES!",
+    page: "competencias.html",
+    id: "Campeones",
+  },
+  {
+    title: "CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS",
+    page: "cultura.html",
+    id: "CONSTITUCIÓN POLÍTICA DE LOS E.U."
+
+
+  }
+];
+
+const searchInput = document.getElementById("searchInput");
+const resultList = document.getElementById("resultsList");
+const noResults = document.getElementById("noResults");
+
+const handleSearch = () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredCountries = countries.filter((country) => country.title.toLowerCase().includes(searchTerm));
+
+  resultList.innerHTML = "";
+
+  if (filteredCountries.length === 0) {
+    noResults.style.display = "block";
+  } else {
+    filteredCountries.forEach((country) => {
+      const li = document.createElement("li");
+      li.textContent = country.title;
+      li.addEventListener("click", () =>{
+        location.href = country.page + "#" + country.id;
+    
+      });
+      resultList.appendChild(li);
+    });
+    noResults.style.display = "none";
+  }
+
+  if (searchInput.value === "") {
+    resultList.innerHTML = "";
+  }
+};
+
+searchInput.addEventListener("input", handleSearch);
+</script>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Cultura.html">Cultura</a></li>
+            <li><a href="Tecnología.html">Tecnología</a></li>
+            <li><a href="Competencias.html">Competencias</a></li>
+            <li><a href="Deportes.html">Deportes</a></li>
+            <li><a href="Sociales.html">Sociales</a></li>
+            <li><a href="Celebraciones.html">Celebraciones</a></li>
+            <li><a href="Obituarios.html">Obituarios</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="noticia-principal">
+            <h1>
+                PLANTEL FORTALECE LA VINCULACIÓN CON
+                INSTITUCIONES DE EDUCACIÓN SUPERIOR
+            </h1>
+
+            <div class="contenedor-noticia">
+
+                <aside class="columna-izquierda">
+
+                    <img src="imagenes/pag3.1.jpg" alt="Coordinador Operativo">
+
+                    <p class="pie-foto">
+                        ▲ Coordinador Operativo del plantel.
+                    </p>
+
+                    <p>
+                        El plantel estuvo representado por el Ing.
+                        José Ramón Cornejo Ortiz, Coordinador
+                        Operativo, quien refrendó el compromiso de la institución con el trabajo colaborativo y la construccion de oportunidades académicas 
+                        para la comunidad estudiantil.
+                    </p>
+
+                </aside>
+
+                <article class="contenido">
+
+                    <p>
+                       El Bachillerato General Plantel Tepeji del Río participó en la Reunión de Vinculación con Directores y 
+                Orientadores de las Instituciones de Educación Media Superior 2026, un espacio de diálogo enfocado en 
+                fortalecer la cordinación interinstitucional.
+                Durante el encuentro se brindó información clara y oportuna sobre la oferta educativa del Instituto Tecnológico
+                Superior del Occidente del Estado de Hidalgo, permitiendo estrechar la comunicación entre instituciones y generar
+                estrategias conjuntas en beneficio de las y los estudiantes.
+                    </p>
+
+                    <img src="imagenes/pag3.2.jpg"
+                        alt="Reunión de Vinculación">
+
+                    <p class="pie-foto">
+                        ▲ Representantes del plantel participaron
+                        en la Reunión de Vinculación 2026, fortaleciendo alianzas académicas.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <section class="destacado">
+
+            <div class="texto-destacado">
+
+                <p>
+                    Para la directora del plantel, Yaneth Miranda, la participación en este tipo de espacios resulta fundamental, ya que 
+                    fortalece la vinculación interinstitucional, impulsa alianzas estratégicas y amplía las posibilidades de continuidad
+                    educativa para el alumnado.
+                    Con acciones como esta, el bachillerato reafirma su compromiso con una educación de calidad y con la apertura de mayores
+                    oportunidades de crecimiento académico.
+                </p>
+
+            </div>
+
+            <div class="imagen-destacado">
+
+                <img src="imagenes/pag3.3.jpg"
+                    alt="Sala de reunión">
+
+            </div>
+
+        </section>
+
+        <section class="solidaridad">
+
+            <article class="tarjeta">
+
+                <img src="imagenes/pag4.1.jpg"
+                    alt="Apoyo por inundaciones">
+
+                <h2>
+                    UNIDOS POR UNA CAUSA: SOLIDARIDAD ANTE LAS INUNDACIONES EN HIDALGO
+                </h2>
+
+                <p>
+                    Como parte del compromiso social que caracteriza al Bachillerato General Plantel Tepeji del Río, se realizó la entrega
+                    de víveres al sistema DIF Hidalgo, el pasado 15 de Octubre del 2025, desrinados a la población afecta par las recientes inundaciones en el estado.
+                </p>
+
+            </article>
+
+            <article class="tarjeta">
+
+                <img src="imagenes/pag5.1.jpg"
+                    alt="Día Naranja">
+
+                <h2>
+                    Día Naranja
+                </h2>
+
+                <p>
+                    Cada 25 de mes, el Bachillerato General Plantel Tepeji
+                    del Río participa en la conmemoración del Día Naranja,
+                    una iniciativa que busca prevenir y erradicar la violencia
+                    contra mujeres y niñas.
+                    Durante la jornada se recordó que la violencia no 
+                    siempre es física, ya que también puede manifestarse
+                    a través de cometarios ofensivos, control en redes
+                    sociales, celos excesivos o la normalización del acoso.
+                    Asimismo, se destacó el papel fundamental de las y
+                    los jóvenes en la construcción de relaciones basadas en
+                    el respeto.
+            
+                </p>
+
+            </article>
+
+            <article class="tarjeta">
+
+                <img src="imagenes/pag5.2.jpg"
+                    alt="Día de la Paz">
+
+                <h2>
+                    Día de la Paz
+                </h2>
+
+                <p>
+                    El plantel Tepeji del Río se sumó al Mosaico Nacional por la Paz y 
+                    Contra las Adicciones, iniciativa impulsada por el Instituto Mexicanos
+                    de la Juventud como parte de la Estrategia Nacional por la Paz.
+                    La actividad tuvo como propósito unir a los 32 estados del país en un 
+                    mensaje colectivo de paz, destacando el papel protagónico de las y los
+                    jóvenes en la construcción de una sociedad más consciente y libre de 
+                    violencia y adicciones.
+                </p>
+
+            </article>
+
+        </section>
+</main>
+
+<footer>
+
+    <div class="nav_section">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Cultura.html">Cultura</a>
+            <a href="Tecnología.html">Tecnología</a>
+            <a href="Competencias.html">Competencias</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Sociales.html">Sociales</a>
+            <a href="Celebraciones.html">Celebraciones</a>
+            <a href="Obituarios.html">Obituarios</a>
+        </nav>
+    </div>
+
+    <div class="consulta">
+        <p>Síguenos:</p>
+        <div class="consulta1">
+            <section class="consulta1">
+                    <div class="red">
+                        <a href="https://www.facebook.com/BachilleratoGenAztecaHgo">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato General Plantel Tepeji del Río</a></p>
+                    </div>
+            </section>
+
+            <section class="consulta1">
+                    <div class="red">
+                    <a href="https://www.bachillerato-hgo.edu.mx/">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    </div>
+                    <div class="link">
+                    <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato del Estado de Hidalgo</a></p>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

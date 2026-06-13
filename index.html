@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticiero 6.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2193d055c9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <div class="encabezado">
+        <img src="imagenes/logo.jpeg" alt="Logo" class="logo">
+        <h1>Noticiero 6.0</h1>
+
+        <div class="boton">
+            <a href="Help.html" class="ayuda">AYUDA</a>
+        </div>
+    </div>
+
+ <div class="search-container">
+      <input type="text" id="searchInput" placeholder="buscar tema" />
+      <ul id="resultsList" class="results-list"></ul>
+      <p id="noResults" class="no-results">No se encontraron resultados.</p>
+    </div>
+
+<script src="app.js"></script>
+<script>
+    const countries = [
+  {
+    title: "¡CAMPEONES NACIONALES!",
+    page: "competencias.html",
+    id: "Campeones",
+  },
+  {
+    title: "CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS",
+    page: "cultura.html",
+    id: "CONSTITUCIÓN POLÍTICA DE LOS E.U."
+
+
+  }
+];
+
+const searchInput = document.getElementById("searchInput");
+const resultList = document.getElementById("resultsList");
+const noResults = document.getElementById("noResults");
+
+const handleSearch = () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredCountries = countries.filter((country) => country.title.toLowerCase().includes(searchTerm));
+
+  resultList.innerHTML = "";
+
+  if (filteredCountries.length === 0) {
+    noResults.style.display = "block";
+  } else {
+    filteredCountries.forEach((country) => {
+      const li = document.createElement("li");
+      li.textContent = country.title;
+      li.addEventListener("click", () =>{
+        location.href = country.page + "#" + country.id;
+    
+      });
+      resultList.appendChild(li);
+    });
+    noResults.style.display = "none";
+  }
+
+  if (searchInput.value === "") {
+    resultList.innerHTML = "";
+  }
+};
+
+searchInput.addEventListener("input", handleSearch);
+</script>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Cultura.html">Cultura</a></li>
+            <li><a href="Tecnología.html">Tecnología</a></li>
+            <li><a href="Competencias.html">Competencias</a></li>
+            <li><a href="Deportes.html">Deportes</a></li>
+            <li><a href="Sociales.html">Sociales</a></li>
+            <li><a href="Celebraciones.html">Celebraciones</a></li>
+            <li><a href="Obituarios.html">Obituarios</a></li>
+        </ul>
+    </nav>
+
+    
+    
+</header>
+
+<main>
+    <section id="Inicio">
+        <h2>Inicio</h2>
+        <p class="subtitulo"><strong>¿Qué es Noticiero 6.0?</strong></p>
+        <p>
+            Noticiero 6.0 es el periódico escolar digital de nuestra institución.
+            Su propósito es informar a estudiantes, docentes y comunidad educativa
+            sobre los acontecimientos más importantes del colegio.
+        </p>
+
+        <p class="subtitulo"></p><strong>Objetivo</strong></p>
+        <p>
+            Brindar información actualizada y confiable sobre actividades
+            académicas, deportivas, culturales y sociales que se desarrollan
+            dentro de la institución educativa.
+        </p>
+
+        <p class="subtitulo"></p><strong>Importancia</strong></p>
+        <p>
+            El periódico escolar fortalece la comunicación entre los miembros
+            de la comunidad educativa y fomenta la participación estudiantil
+            en la creación y difusión de contenidos.
+        </p>
+
+        <p class="subtitulo"></p><strong>Contenido</strong></p>
+        <p>
+            En este espacio encontrarás noticias, entrevistas, reportajes,
+            actividades institucionales, competencias, celebraciones y eventos
+            relevantes para toda la comunidad educativa.
+        </p>
+    </section>
+
+    <section id="Noticias">
+        <h2>Noticias Variadas</h2>
+        <p class="subtitulo"></p><strong>Noticias Académicas</strong></p>
+        <p>
+            Información relacionada con proyectos, ferias científicas,
+            concursos académicos y actividades desarrolladas por los estudiantes.
+        </p>
+
+        <p class="subtitulo"></p><strong>Noticias Deportivas</strong></p>
+        <p>
+            Cobertura de torneos, campeonatos, encuentros deportivos y logros
+            obtenidos por los equipos representativos de la institución.
+        </p>
+
+        <p class="subtitulo"></p><strong>Noticias Culturales</strong></p>
+        <p>
+            Actividades artísticas, presentaciones musicales, exposiciones y
+            eventos que promueven la cultura y el talento estudiantil.
+        </p>
+    </section>
+
+    <section id="Mision">
+        <h2>Misión</h2>
+        <p>
+            Difundir información veraz, oportuna y de interés para la comunidad
+            educativa, promoviendo la participación, la creatividad y el sentido
+            de pertenencia de los estudiantes.
+        </p>
+    </section>
+
+    <section id="Vision">
+        <h2>Visión</h2>
+        <p>
+            Consolidarse como el principal medio digital de comunicación escolar,
+            reconocido por la calidad de sus contenidos y por fomentar el
+            desarrollo de competencias comunicativas en los estudiantes.
+        </p>
+    </section>
+</main>
+
+<footer>
+
+    <div class="nav_section">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Cultura.html">Cultura</a>
+            <a href="Tecnología.html">Tecnología</a>
+            <a href="Competencias.html">Competencias</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Sociales.html">Sociales</a>
+            <a href="Celebraciones.html">Celebraciones</a>
+            <a href="Obituarios.html">Obituarios</a>
+        </nav>
+    </div>
+
+    <div class="consulta">
+        <p>Síguenos:</p>
+        <div class="consulta1">
+            <section class="consulta1">
+                    <div class="red">
+                        <a href="https://www.facebook.com/BachilleratoGenAztecaHgo">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato General Plantel Tepeji del Río</a></p>
+                    </div>
+            </section>
+
+            <section class="consulta1">
+                    <div class="red">
+                    <a href="https://www.bachillerato-hgo.edu.mx/">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    </div>
+                    <div class="link">
+                    <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato del Estado de Hidalgo</a></p>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+</footer>
+
+
+
+</body>
+</html>

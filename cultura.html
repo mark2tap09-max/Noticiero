@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticiero 6.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cultura.css">
+    <script src="https://kit.fontawesome.com/2193d055c9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <div class="encabezado">
+        <img src="imagenes/logo.jpeg" alt="Logo" class="logo">
+        <h1>Noticiero 6.0</h1>
+
+        <div class="boton">
+            <a href="Help.html" class="ayuda">AYUDA</a>
+        </div>
+    </div>
+<div class="search-container">
+      <input type="text" id="searchInput" placeholder="buscar tema" />
+      <ul id="resultsList" class="results-list"></ul>
+      <p id="noResults" class="no-results">No se encontraron resultados.</p>
+    </div>
+
+<script src="app.js"></script>
+<script>
+    const countries = [
+  {
+    title: "¡CAMPEONES NACIONALES!",
+    page: "competencias.html",
+    id: "Campeones",
+  },
+  {
+    title: "CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS",
+    page: "cultura.html",
+    id: "CONSTITUCIÓN POLÍTICA DE LOS E.U."
+
+
+  }
+];
+
+const searchInput = document.getElementById("searchInput");
+const resultList = document.getElementById("resultsList");
+const noResults = document.getElementById("noResults");
+
+const handleSearch = () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredCountries = countries.filter((country) => country.title.toLowerCase().includes(searchTerm));
+
+  resultList.innerHTML = "";
+
+  if (filteredCountries.length === 0) {
+    noResults.style.display = "block";
+  } else {
+    filteredCountries.forEach((country) => {
+      const li = document.createElement("li");
+      li.textContent = country.title;
+      li.addEventListener("click", () =>{
+        location.href = country.page + "#" + country.id;
+    
+      });
+      resultList.appendChild(li);
+    });
+    noResults.style.display = "none";
+  }
+
+  if (searchInput.value === "") {
+    resultList.innerHTML = "";
+  }
+};
+
+searchInput.addEventListener("input", handleSearch);
+</script>
+
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Cultura.html">Cultura</a></li>
+            <li><a href="Tecnología.html">Tecnología</a></li>
+            <li><a href="Competencias.html">Competencias</a></li>
+            <li><a href="Deportes.html">Deportes</a></li>
+            <li><a href="Sociales.html">Sociales</a></li>
+            <li><a href="Celebraciones.html">Celebraciones</a></li>
+            <li><a href="Obituarios.html">Obituarios</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="cultura">
+
+        <div class="encabezado-cultura">
+
+
+            <div class="seccion">
+                CULTURA
+            </div>
+
+            <div class="fecha">
+                Lunes 2 de marzo de 2026
+            </div>
+
+        </div>
+
+        <hr>
+
+        <article class="noticia-principal">
+
+            <div class="contenedor-noticia">
+
+                <aside class="columna-izquierda">
+
+                    <img src="imagenes/pag1.1.jpg"
+                        alt="Actividad teoría del color">
+
+                    <p class="pie-foto">
+                        ▲ Estudiantes trabajando con mezclas de colores primarios como parte de su formación en Diseño Digital.
+                    </p>
+
+                </aside>
+
+                <div class="contenido">
+
+                    <p>
+                        Los alumnos del plantel participaron en una actividad práctica en la materia de Diseño Digital,
+                        con el objetivo de comprender de manera dinámica la teoría del color y su aplicación en el ámbito visual.
+                    </p>
+
+                    <p>
+                        Durante la sesión, los estudiantes trabajaron con pintura vinílica y realizaron mezclas de colores
+                        primarios: rojo, azul y amarillo para observar cómo se obtienen los colores secundarios y terciarios.
+                        Además, identificaron los colores cálidos y fríos, así como los colores complementarios dentro del círculo cromático.
+                    </p>
+
+                    <p>
+                        La actividad permitió reforzar conceptos fundamentales como la armonía visual y el impacto emocional
+                        que los colores pueden generar en el diseño. A través de esta práctica, los alumnos no solo aprendieron teoría,
+                        sino que también experimentaron de forma artística, fomentando la creatividad y la percepción visual.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="galeria-cultura">
+
+                <img src="imagenes/pag1.2.jpg"
+                    alt="Sopa de letras">
+
+                <img src="imagenes/pag1.3.jpg"
+                    alt="Círculo cromático">
+                       <p class="pie-foto">
+                        ▲ Resultado de la actividad sobre la teoría del color realizada en la materia del Diseño Digital.
+                    </p>
+            </div>
+        </article>
+
+             /*CONSTITUCIÓN*/
+
+        <article class="tarjeta-cultura">
+
+            <h2 id="CONSTITUCIÓN POLÍTICA DE LOS E.U.">
+                CONSTITUCIÓN POLÍTICA DE LOS
+                ESTADOS UNIDOS MEXICANOS
+            </h2>
+             <p class="pie-foto">
+                        ▲ Exposición de carteles en conmemoración de la Constitución Política de los Estados Unidos Mexicanos.
+                    </p>
+
+        <div class="imagenes-carteles">
+
+    <img src="imagenes/pag2.1.jpg" alt="Imagen 1">
+
+    <img src="imagenes/pag2.2.jpg" alt="Imagen 2">
+
+    <img src="imagenes/pag2.3.jpg" alt="Imagen 3">
+
+</div>
+            <div class="contenido-constitucion">
+
+                <img src="imagenes/pag2.4.jpg"
+                    alt="Constitución Mexicana">
+
+                <div>
+
+                    <p>
+                        En el marco de la conmemoración de la 
+                        promulgación de la Constitución Política de los
+                        Estados Unidos Mexicanos, estudiantes del sexto
+                        semestre del Bachillerato General Plantel Tepeji
+                        del Río realizaron una exposición de carteles 
+                        alusivos a este documento histórico.
+
+                    <p>
+                        La actividad tuvo como propósito fortalecer la 
+                        conciencia cívica y promover la reflexión entre la 
+                        comunidad estudialtil sobre la importancia de la 
+                        Constitución como base jurídica y social del país. Los trabajos fueron presentados ante alumnos y
+                        docentes durante el mes de febrero, generando un espacio de análisis y participación.
+
+                    <p>
+                        A través de la creatividad y el diseño visual, las y los estudiantes representaron valores como la
+                        justicia, la igualdad y los derechos fundamentales, demostrando que el arte también puede
+                        convertirse en una herramienta de expresión ciudadana.
+                        La institución reconoció el acompañamiento y seguimiento de la docente Elsa Hernández Flores,
+                        quien impulsó esta significativa actividad académica.
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+</main>
+
+<footer>
+
+    <div class="nav_section">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="Cultura.html">Cultura</a>
+            <a href="Tecnología.html">Tecnología</a>
+            <a href="Competencias.html">Competencias</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Sociales.html">Sociales</a>
+            <a href="Celebraciones.html">Celebraciones</a>
+            <a href="Obituarios.html">Obituarios</a>
+        </nav>
+    </div>
+
+    <div class="consulta">
+        <p>Síguenos:</p>
+        <div class="consulta1">
+            <section class="consulta1">
+                    <div class="red">
+                        <a href="https://www.facebook.com/BachilleratoGenAztecaHgo">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato General Plantel Tepeji del Río</a></p>
+                    </div>
+            </section>
+
+            <section class="consulta1">
+                    <div class="red">
+                    <a href="https://www.bachillerato-hgo.edu.mx/">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    </div>
+                    <div class="link">
+                    <p><a href="https://www.facebook.com/BachilleratoGenAztecaHgo">Bachillerato del Estado de Hidalgo</a></p>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+/*ENCABEZADO*/
+header{
+    background-color: rgb(105, 19, 19);
+    color: white;
+    padding: 20px;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    padding-right: 20px;
+}
+
+h1{
+    font-size: 100px;
+}
+
+header div{
+    display: flex;
+    margin:auto;
+}
+
+.boton a{
+    text-decoration: none;
+    background: #221e66;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.boton a:hover{
+    background-color: gray;
+}
+
+/*MENÚ*/
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu a{
+    text-decoration: none;
+    background: #000000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul a:hover{
+    background-color: gray;
+}
+
+
+
+
+
+.subtitulo{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    
+}
+
+p{
+    text-align: justify;
+    line-height: 1.9;
+}
+
+
+
+main{
+    width:80%;
+    margin:auto;
+    background:white;
+    padding:20px;
+}
+
+section{
+    margin-bottom:30px;
+}
+
+h2{
+    color:#b32037;
+}
+
+
+
+
+
+
+
+
+/*PIE DE PÁGINA*/
+footer{
+    margin-top: 20px;
+    background: rgb(105, 19, 19);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.nav-section nav{
+    display: flex;
+    justify-content: center;
+}
+
+div nav a{
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+div nav a:hover{
+    color:black;
+}
+
+.nav_section nav a{
+    color: white;
+}
+
+.consulta p{
+    color:black;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.consulta1{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 30px;
+    align-items: center;
+}
+
+.red a{
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.red a:hover{
+    background-color: gray;
+}
+
+.red a i{
+    font-size: 20px;
+    transition: all .3s ease;
+}
+.red a i:hover{
+    transform: translateY(-2px);
+}
+
+.link p{
+    margin-top: 0%;
+}
+
+.link p a{
+    color:white;
+    font-size: 20px;
+}
+
+.link p a:hover{
+    color:black;
+}
+
+@media (max-width: 760px){
+
+    .encabezado img{
+        width: 100px;
+        height: 100px;
+    }
+
+    h1{
+    font-size: 50px;
+    }
+
+    .menu{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .menu{
+      gap: 15px;
+    }
+
+    .menu a{
+        font-size: smaller;
+        padding: 5px 10px;
+    }
+
+    div nav a{
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+
+    .consulta1{
+        padding: 15px 0px;
+        gap: 10px;
+    }
+
+    .link p a{
+        display:none;
+    }
+}
+
+.search-container {
+  position: relative;
+  width: 1000px;
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  width: 1000px;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: none;
+  border-bottom: 0;
+  border: none;
+}
+
+.results-list {
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+
+ background: white;
+ border: none;
+ z-index: 9999;
+
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+  
+}
+
+.results-list li {
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  border-top: 1px solid #ccc;
+}
+
+.results-list li:hover {
+    background: #eee;
+}
+
+.no-results {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   box-sizing: border-box;
+
+   background: white;
+   padding: 10px;
+   margin-top: 0px;
+
+   text-align: center;
+   color: #666;
+
+   border-top: 2px solid #ccc;
+
+   z-index: 9999;
+   display: none;
+}
+
+#help form{
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+#help input,
+#help textarea{
+width: 100%;
+
+    padding: 30px;
+
+    font-size: 22px;
+
+    border-radius: 12px;
+
+    border: 2px solid #ccc;
+
+    font-family: Arial;
+
+    box-sizing: border-box;
+}
+
+#help textarea{
+
+    height: 180px;
+
+    resize: none;
+}
+
+#help button{
+
+    background: rgb(105, 19, 19);
+
+    color: white;
+
+    border: none;
+
+    padding: 18px;
+
+    font-size: 24px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+}
